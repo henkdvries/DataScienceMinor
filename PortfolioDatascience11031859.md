@@ -20,7 +20,7 @@ _To what extend and in what way, can different data science techniques be used o
 We worked on a classification model to classify patients into different patients groups depending on severity of their Rotator Cuff tears. The patient groups are pre-determined by physicians of the LUMC. 
 
 ### Structure
-For the structure of the project we used scrum to divide bigger issues into smaller tasks. I setup the Azure DevOps enviroment where we both have are scrumboard but also our repository. We did weekly and bi-weekly sprints depending on the stage of the project to guide the team from the starting epics towards smaller task that could be completed within a sprint. 
+For the structure of the project we used scrum to divide epics into smaller tasks. I setup the Azure DevOps enviroment where we both have are scrumboard but also our repository. We did weekly and bi-weekly sprints depending on the stage of the project to guide the team from the starting epics towards smaller task that could be completed within a sprint. 
 
 ---
 # Python for Datascience
@@ -88,6 +88,7 @@ I wrote or rewrote large parts of the paper, for example the introduction below.
 >
 
 We worked in a way so we all wrote keypoints to all the subjects and iteratively write the keypoints into paragraph. Since I was one of the only persons to work out these keypoints thuesday into actual paragraphs I wrote larges parts of the paper, specifically the introduction, result, discussion, conclusion and some parts in techniques. Not all my written parts stayed the same, other teammembers have rewrote my texts aswell since we continued to update the paper to the latest version. 
+
 ---
 # Presentations
 During the minor I gave multiple presentations, everytime I gave the presentation I created the powerpoint togather with my co-presenter. 
@@ -95,5 +96,20 @@ During the minor I gave multiple presentations, everytime I gave the presentatio
 ---
 # Reflection
 ## Own Contribution Evaluation
+### Situation
+### Task
+### Actions
+### Results
+### Reflection
 ## Learned Objectives Evaluation
+### Situation
+### Task
+### Actions
+### Results
+### Reflection
 ## Group Evaluation
+### Situation
+### Task
+### Actions
+### Results
+### Reflection

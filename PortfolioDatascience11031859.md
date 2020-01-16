@@ -59,6 +59,12 @@ For the model evaluations I searched on what good model evaluations are besides 
 I found the following model evaluations that could be usefull to get a more in depth evaluation beside the standard group I learned about within the lessons.
 * Matthews Correlation Coefficient (MCC): this evaluation is a measure of quality of a classification. It is a balanced measure that isn't influenced by imbalanced datasets. It takes the full spectrum of the confusion matrix to create a correlation coefficient between the predicted and observed classifications. Where a +1 score is a perfect observed vs predicted classification, 0 no better than random predictions and -1 indicates complete disagreement between observed vs predicted classification. 
 * Logaritmic Loss: Log Loss gives more nuanced view of the predictions because it takes into account the uncertainty of the prediction based on how much it varies from the true label. 
+
+I wrote code so the model returns a set of model evaluations, which eventually get added the the configuration the model runs. the last part wasn't written by me, I just focused on the model evaluations. Below is an example of a finished configuration with the different model evaluations in it. 
+
+
+
+In the actual research paper we just used the accuracy, precision and recall. I also created a confusion matrix for 
 ---
 # Research
 ## Desk Research
@@ -66,9 +72,10 @@ To get a good feel for the domain of our research I spent alot of time reading r
 
 
 1. D. Douglas Miller, E. W. (2018). Artificial Intelligence in Medical Practice: The. The American Journal of Medicine, 129/133.
-- This paper describes the use of AI in medical practice. It shows that since the 90's slowly more 
+- This paper describes the use of AI in medical practice. It shows that since the 90's slowly more AI has been used within the field of medicine. Thus confirming 
 
 2. Phadke, V., Braman, J. P., LaPrade, R. F., & Ludewig, P. M. (2011). Comparison of glenohumeral motion using different rotation sequences. Journal of Biomechanics, 44(4), 700–705. https://doi.org/10.1016/j.jbiomech.2010.10.042
+- This paper describes a problem we could run into with our data regarding the humerus and the issue with working with Euler angles to represent movement, it is called Gimbal Lock. This is where in Euler space one axis rotates 90 degrees, which it then lines up with another axis, therefor removing one degree of freedom. This was also neccesary to understand why the axis notations defined by the paper of Wu
 
 ## Paper
 I wrote or rewrote large parts of the paper, for example the introduction below. I worked the last couple of day almost 12 hours per day on the research paper. 
@@ -77,8 +84,12 @@ I wrote or rewrote large parts of the paper, for example the introduction below.
 >
 >While most machine learning focuses on Radiology, Oncology, Cardiology and Pathology, the focus of Computer-Assisted-Diagnosis (CAD) lies in image processing and assessing bio markers. The Laboratory for Kinematics and Neuromechanics (LK&N) in the Leiden University Medical Center (LUMC) (Sylvia A. Stegeman, 2016) (C.G.M.Meskers, 1998) is searching for new tools to support doctors in diagnosing Musculoskeletal Disorders (MSD) that are not found within these areas. This research is a follow up on previous researches done by the students of the minor Applied Data Science at the Hague University of Applied Sciences and the LK&N (Kasper van der Hoofd, 2019) as to find new ways to diagnose Rotator Cuff tears using machine learning.  
 >
+
+We worked in a way so we all wrote keypoints to all the subjects, since I was one of the only persons to work out these keypoints tuesday into actual paragraphs I wrote larges partes of the paper, specifically the introduction, result, discussion, conclusion and some parts in techniques. 
 ---
 # Presentations
+During 
+
 ---
 # Reflection
 ## Own Contribution Evaluation

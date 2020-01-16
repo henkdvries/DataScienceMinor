@@ -10,6 +10,15 @@ For the minor Applied Data Science at the Hague University of Applied Sciences I
 
 ---
 # Domain
+I tried to understand the domain as best as possible. this is why I went on a deep dive to find research papers that could explain what the data meant and how it could be interpreted. This resulted in finding several good papers that gave me insight in how machine learning is used in the medical field. Other members of the team gathered scientific papers aswell, which I all read to get a better understanding of shoulder motion and kinemetic recordings of that. 
+
+## Introduction
+
+>The use of machine learning in the medical field started in the >1990’s. With the increase of data and processing power in the >21st century, this became a more usable tool. Since 2010 there has been a sharp rise in companies, investing in machine learning and artificial intelligence with the purpose of supporting the medical field (D. Douglas Miller, 2018).  
+>
+>While most machine learning focuses on Radiology, Oncology, Cardiology and Pathology, the focus of Computer-Assisted-Diagnosis (CAD) lies in image processing and assessing bio markers. The Laboratory for Kinematics and Neuromechanics (LK&N) in the Leiden University Medical Center (LUMC) (Sylvia A. Stegeman, 2016) (C.G.M.Meskers, 1998) is searching for new tools to support doctors in diagnosing Musculoskeletal Disorders (MSD) that are not found within these areas. This research is a follow up on previous researches done by the students of the minor Applied Data Science at the Hague University of Applied Sciences and the LK&N (Kasper van der Hoofd, 2019) as to find new ways to diagnose Rotator Cuff tears using machine learning.  
+>
+
 ---
 # Python for Datascience
 As Software Engineering student I had experience with python for a couple of years. Although I thought I knew the most from the early parts of the Datacamp Courses, I was suprised to see there is plenty of more to learn. I had experience with the certain libraries like numpy but didn't know the inner workings until I started learning it with Data Camp. Furthermore, I didn't have much experience with most Data Science libraries, but they were explained pretty well with the Datacamp courses. 

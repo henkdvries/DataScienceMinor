@@ -28,18 +28,19 @@ The first solution I had in mind was to use fingerprinting to find the character
 
 As seen in the result below, I wasn't able to refine the chunk finder to a point that I could actually use it. The colours represent the direction, with red being down and blue going up. As you can see it didn't got that right. In the end I spent alot of time working on a non functioning tool.
 ![Chunkfinder](/images/FoundChunks.png)
+[I'm an inline-style link with title](/Fingerprinting/Data Science/filespotting.py "script located here")
 ### Visualizing Data
 At this point I wanted to manually go through all the files which means I needed a way to visualize the exercises in a way so I could compare the same labeled exercises from multiple patients.
 #### Manually Finding Wrongly Named Files
 Because I didn't want to spend to much time in filling in the data or clicking through the different plots of the exercises I went on to create a dynamic visualizer to plot all the exercises and patient dynamically, which I could loop through with simple key board shortcuts. I also added a way to register all the wrongly named files to a single json file. 
-
+![Chunkfinder](/images/Dynamicvis.png)
+[I'm an inline-style link with title](/images/Dynamicvis.png "script located here")
 ---
 # Predictive Analytics
 
 ## Model Evaluation
 ---
 # Research
----
 ## Desk Research
 ## Paper
 ---

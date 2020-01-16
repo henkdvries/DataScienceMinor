@@ -18,6 +18,7 @@ This resulted in the following research question:
 _To what extend and in what way, can different data science techniques be used on kinematic recordings to contribute to a more valid and more reliable diagnosis, made by a doctor, on shoulder disability_
 
 We worked on a classification model to classify patients into different patients groups depending on severity of their Rotator Cuff tears. The patient groups are pre-determined by physicians of the LUMC. 
+
 ### Structure
 For the structure of the project we used scrum to divide bigger issues into smaller tasks. I setup the Azure DevOps enviroment where we both have are scrumboard but also our repository. We did weekly and bi-weekly sprints depending on the stage of the project to guide the team from the starting epics towards smaller task that could be completed within a sprint. 
 
@@ -50,15 +51,25 @@ Because I didn't want to spend to much time in filling in the data or clicking t
 
 ---
 # Predictive Analytics
-For the predictive analytics I mostly worked on the model evaluation. 
+For the predictive analytics I mostly worked on the model evaluation.
 
 ## Model Evaluation
+For the model evaluations I searched on what good model evaluations are besides the explained group of accuracy, preciscion, recall and the F1 score. 
+
+I found the following model evaluations that could be usefull to get a more in depth evaluation beside the standard group I learned about within the lessons.
+* Matthews Correlation Coefficient (MCC): this evaluation is a measure of quality of a classification. It is a balanced measure that isn't influenced by imbalanced datasets. It takes the full spectrum of the confusion matrix to create a correlation coefficient between the predicted and observed classifications. Where a +1 score is a perfect observed vs predicted classification, 0 no better than random predictions and -1 indicates complete disagreement between observed vs predicted classification. 
+* Logaritmic Loss: Log Loss gives more nuanced view of the predictions because it takes into account the uncertainty of the prediction based on how much it varies from the true label. 
 ---
 # Research
 ## Desk Research
 To get a good feel for the domain of our research I spent alot of time reading research papers about machine learning within the medical field, how motion of shoulders work and these shoulder motions can be translated to data that can be used for machine learning. I summed up a list of interesting research papers I found during my desk research.
 
-TABLE HERE
+
+1. D. Douglas Miller, E. W. (2018). Artificial Intelligence in Medical Practice: The. The American Journal of Medicine, 129/133.
+- This paper describes the use of AI in medical practice. It shows that since the 90's slowly more 
+
+2. Phadke, V., Braman, J. P., LaPrade, R. F., & Ludewig, P. M. (2011). Comparison of glenohumeral motion using different rotation sequences. Journal of Biomechanics, 44(4), 700–705. https://doi.org/10.1016/j.jbiomech.2010.10.042
+
 ## Paper
 I wrote or rewrote large parts of the paper, for example the introduction below. I worked the last couple of day almost 12 hours per day on the research paper. 
 

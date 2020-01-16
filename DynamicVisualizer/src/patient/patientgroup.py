@@ -6,7 +6,6 @@ from config import config
 
 from multiprocessing import Pool
 
-
 class PatientGroup:
     """
     Data housing for a patient category

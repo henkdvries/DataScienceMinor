@@ -9,10 +9,11 @@ import pandas as pd
 import pprint
 
 
+
 from sklearn.cluster import KMeans
 from mpl_toolkits.mplot3d import Axes3D
 
-from tools.remove_idle import RemoveIdle 
+#from tools.remove_idle import RemoveIdle 
 
 from config import config
 
@@ -34,7 +35,7 @@ class Visualize:
         self.unique_patients = []
 
         self.filtered_data = [] 
-        self.filter_data() 
+        self.filter_data_2() 
 
         self.generate_metadata()
 
@@ -54,27 +55,21 @@ class Visualize:
             
             # Extract the data 
             df = exercise.dataframe[[bone]].reset_index(drop=True)
-            if len(self.bones) is 1:
-                try:
-                    self.axs[column].plot(df, c=self.colors[color], linestyle=linestyle)
-                except TypeError:
-                    self.axs.plot(df, c=self.colors[color], linestyle=linestyle)
-            try:
-                try:
-                    self.axs[index].plot(df, c=self.colors[color], linestyle=linestyle)
-                except:
-                    self.axs[column].plot(df, c=self.colors[color], linestyle=linestyle)
-            except:
-                try:
-                    self.axs[index,column].plot(df, c=self.colors[color], linestyle=linestyle)
-                except:
-                    self.axs.plot(df, c=self.colors[color], linestyle=linestyle)
-            # plot the data 
+            self.axs[index,column].plot(df, c=self.colors[color], linestyle=linestyle)
             
+            # plot the data 
+        
 
         # Row is based on data inside of the exercise 
 
+
+        # Where to plot what?? 
+
+        # axs[j,i].plot(self.y,df_r.iloc[:,2+2*j], c = self.colors[int(exer.patientid)-1], linestyle= self.l_styles[int(exer.patientgroup)-1])
+
     def visualize_idle(self, exercise, column):
+
+        print()
 
         for index, bone in enumerate(self.bones):
             df = exercise.df[[bone]].reset_index(drop=True)
@@ -95,79 +90,59 @@ class Visualize:
 
             linestyle = self.l_styles[int(exercise.patientgroup)-1]
             
+            print(color)
+            print(type(color))
+             
+            print(endcolor)
+            print(type(endcolor))
 
-            start= exercise.begin
-            end = exercise.end
-            
-            if len(self.unique_patients) is 1:
-                try:
-                    self.axs[column].axvline(x=start, c=startcolor)
-                    self.axs[column].axvline(x=end, c=endcolor)
-                    self.axs[column].plot(df, c=color, linestyle=linestyle)
-                except TypeError:
-                    self.axs.axvline(x=start, c=startcolor)
-                    self.axs.axvline(x=end, c=endcolor)
-                    self.axs.plot(df, c=color, linestyle=linestyle)
-            else:
-                try:
-                    self.axs[row,column].axvline(x=start, c=startcolor)
-                    self.axs[row,column].axvline(x=end, c=endcolor)
-                    self.axs[row,column].plot(df, c=color, linestyle=linestyle)
-                except IndexError:
-                    self.axs[row].axvline(x=start, c=startcolor)
-                    self.axs[row].axvline(x=end, c=endcolor)
-                    self.axs[row].plot(df, c=color, linestyle=linestyle)
-                except TypeError:
-                    self.axs.axvline(x=start, c=startcolor)
-                    self.axs.axvline(x=end, c=endcolor)
-                    self.axs.plot(df, c=color, linestyle=linestyle)
+            start= exercise.idle.begin
+            end = exercise.idle.the_end
+            self.axs[row,column].axvline(x=start, c=startcolor)
+            self.axs[row,column].axvline(x=end, c=endcolor)
+            self.axs[row,column].plot(df, c=color, linestyle=linestyle)
 
 
-    def visualise(self, mode = None): 
+    def visualise(self): 
         # TODO: Setting plot title 
 
-        if mode == 'idle':
-            self.fig, self.axs = plt.subplots(
-                len(self.unique_patients),
-                len(self.exercises))
-            self.set_title(self.fig, 'this a visulization')
-            print('Created plot with {cols} cols and {rows} rows'.format(cols=len(self.exercises), rows=len(self.unique_patients)))
-            
-            self.generate_colors_patients()
-
-            # Looping through filtered exercises 
-            for exercise in self.filtered_data:
-                column_index = self.exercises.index(exercise.exercisegroup)
-                # self.visualise_exercise(exercise, column_index)
-                self.visualize_idle(exercise, column_index)
-            #setting labels vor legend
-            self.set_label(self.axs, self.exercises, self.unique_patients)
-            self.set_legend(self.fig, self.unique_patients, self.colors, self.l_styles)
-            plt.show() 
-
-
-        elif mode == 'exercise':
-            self.fig, self.axs = plt.subplots(
-                len(self.bones),
-                len(self.exercises))
-            self.set_title(self.fig, 'this a visulise')
-            print('Created plot with {cols} cols and {rows} rows'.format(cols=len(self.exercises), rows=len(self.bones)))
-            
-            self.generate_colors_patients()
-
-            # Looping through filtered exercises 
-            for exercise in self.filtered_data:
-                column_index = self.exercises.index(exercise.exercisegroup)
-                self.visualise_exercise(exercise, column_index)
-
-
-              #setting labels vor legend
-            self.set_label(self.axs, self.exercises, self.bones)
-            self.set_legend(self.fig, self.unique_patients, self.colors, self.l_styles)
-            plt.show() 
-        else:
-            raise('mode needs to be set either to "idle" or "exercise"')
+        # self.fig, self.axs = plt.subplots(
+        #     len(self.unique_patients),
+        #     len(self.exercises))
+        # self.set_title(self.fig, 'this a visulization')
+        # print('Created plot with {cols} cols and {rows} rows'.format(cols=len(self.bones), rows=len(self.exercises)))
         
+        # self.generate_colors_patients()
+
+        # # Looping through filtered exercises 
+        # for exercise in self.filtered_data:
+        #     column_index = self.exercises.index(exercise.exercisegroup)
+        #     # self.visualise_exercise(exercise, column_index)
+        #     self.visualize_idle(exercise, column_index)
+        # #setting labels vor legend
+        # self.set_label(self.axs, self.exercises, self.unique_patients)
+        # self.set_legend(self.fig, self.unique_patients, self.colors, self.l_styles)
+
+
+
+        self.fig, self.axs = plt.subplots(
+            len(self.bones),
+            len(self.exercises))
+        self.set_title(self.fig, 'this a visulise')
+        print('Created plot with {cols} cols and {rows} rows'.format(cols=len(self.bones), rows=len(self.exercises)))
+        
+        self.generate_colors_patients()
+
+        # Looping through filtered exercises 
+        for exercise in self.filtered_data:
+            column_index = self.exercises.index(exercise.exercisegroup)
+            self.visualise_exercise(exercise, column_index)
+
+
+          #setting labels vor legend
+        self.set_label(self.axs, self.exercises, self.bones)
+        self.set_legend(self.fig, self.unique_patients, self.colors, self.l_styles)
+        plt.show() 
 
 
 
@@ -229,8 +204,11 @@ class Visualize:
         if not self.catagory:
             self.catagory = categories
         if self.patients:
+            print(self.patients)
             for c in self.catagory:
+                print(c)
                 for p in self.patients:
+                    print("hit")
                     unique = self.get_unique_patientnr(c,p)
                     if unique not in uniques:
                         uniques.append(unique)
@@ -238,11 +216,34 @@ class Visualize:
         self.unique_patients = uniques
         
 
+
+
+    def filter_data_2(self):
+        # Getting all exercises 
+
+        for exercise in self.data:
+            skip = False
+            # If catagory is not none, we want to filter 
+
+            if self.catagory:
+                if int(exercise.patientgroup) not in self.catagory:  
+                    skip = True 
+
+            if self.patients and not skip: 
+                if int(exercise.patientid) not in self.patients: 
+                    skip = True  
+
+            if self.exercises and not skip: 
+                if exercise.exercisegroup not in self.exercises: 
+                    skip = True 
+
+            if not skip: 
+                self.filtered_data.append(exercise)
     def filter_data(self):
         # Getting all exercises 
         for patientgroup in self.data: 
-            for patient in patientgroup:
-                for exercise in patient:
+            for patient in patientgroup.patients:
+                for exercise in patient.exercises:
                     skip = False
                     # If catagory is not none, we want to filter 
  
@@ -297,22 +298,7 @@ class Visualize:
             fig.legend(handles=handels[93:], labels=labels[93:], ncol=2, loc="upper rigtht")
 
     def set_label(self,axs, cols, rows):
-        try:
-            for ax, col in zip(axs[0], cols):
-                ax.set_title(col)
-            for ax, row in zip(axs[:,0], rows):
-                ax.set_ylabel(row, rotation=0, size='large')
-
-        except TypeError:
-            try:
-                for ax, col in zip(axs, cols):
-                    ax.set_title(col)
-                for ax, row in zip(axs, rows):
-                    ax.set_ylabel(row, rotation = 0, size = 'large')
-            except:
-                axs.set_title(cols[0])
-                axs.set_ylabel(rows[0], rotation = 0, size = 'large')
-        
-            
-        except:
-            print("It's all fucked")
+        for ax, col in zip(axs[0], cols):
+            ax.set_title(col)
+        for ax, row in zip(axs[:,0], rows):
+            ax.set_ylabel(row, rotation=0, size='large')

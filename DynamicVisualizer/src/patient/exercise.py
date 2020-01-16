@@ -1,16 +1,8 @@
 import os
 import pandas as pd
-import math 
-import numpy as np
 from config import config
 from tools.visualiseraw import VisualiseRaw 
 # from tools.remove_idle import RemoveIdle
-from tools.resample import resample_excercise
-
-from tools.removeidle import Removeidle
-
-
-
 
 class Exercise:
     sizes = []
@@ -42,77 +34,12 @@ class Exercise:
         # Reading data; df should be read-only
         self.df = pd.read_csv(self.path, names=list(range(30)))
         self.df = self.df.rename(columns=Exercise.columns)
-        
+        self.dataframe = self.df
+        self.np_data = self.df.to_numpy() 
+
         # Doing something with the raw data - visualistation
-        self.update_config() 
-        # self.raw = VisualiseRaw(self.raw_path, self)
-
-        if config.differentiation:
-            self.filtered_signal = self.lowpassfilter(1/6, 1 / (2 * math.pi * 0.5)) 
-            self.differentiation = self.differentiation(self.filtered_signal)
-
-  
-    def differentiation(self, y,  h=1):
-        '''Compute the difference formula for f'(a) with step size h.
-            Parameters
-            ----------
-            f : function
-                Vectorized function of one variable
-            a : number
-                Compute derivative at x = a
-            method : string
-                Difference formula: 'forward', 'backward' or 'central'
-            h : number
-                Step size in difference formula
-            '''
-        differentiation = np.zeros((y.shape[0], 1))
-        for i, value in enumerate(range(y.shape[0] - 1), 1):
-            differentiation[i] = (y[i] - y[i-1]) / (1/6)
-
-        return differentiation 
-
-    # TODO: Implement function on all bones!! 
-    def lowpassfilter(self, dt, RC):
-        # RC: time constant - related to cut off freq
-        # dt: time interval 
-        x = self.df.to_numpy()[:,0]  
-        y = np.zeros((self.df.shape[0], 1))
-        yy = np.zeros((self.df.shape[0], 1))
-        a = dt / (RC + dt)  
-        y[0] = x[0] 
+        self.raw = VisualiseRaw(self.raw_path, self)
         
-        for i, value in enumerate(range(x.shape[0] - 1), start=1):    
-            y[i] = a * x[i] + (1-a) * y[i-1]
-        
-        return y 
-         
-    def update_config(self): 
-        # If we want to remove idle
-        if config.remove_idle:
-            self.idle = Removeidle(self)
-            self.end = self.idle.end()
-            self.begin = self.idle.start()
-            self.dataframe = self.idle.df
-            #print('done removing idle and generating dataframes',self.dataframe.shape) 
-        else: 
-            self.dataframe = self.df.copy()
-        if config.resample_exercise:
-            # resample_excercise returns only the colums from config.columns
-            self.dataframe = resample_excercise(self.dataframe, config.frames_counts)
-        else:
-            # Making a small dataframe of 5 rows by multipling the rows with the columns
-            frames = self.get_frames()
-            #print(frames, self.dataframe.head())
-            self.dataframe = self.dataframe[config.columns].iloc[frames]
-
-        if config.frame_generator:
-            self.np_frames = [] 
-            self.gen_frames()
-
-        # Compute the numpy array of dataframe by using .to_numpy
-        self.np_data = self.dataframe.to_numpy() 
-
-    
     def df_regex(self, pattern):
         # Left          r"._l_."
         # Right         r"._r_."

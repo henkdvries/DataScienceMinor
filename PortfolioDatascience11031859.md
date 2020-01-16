@@ -63,10 +63,37 @@ I found the following model evaluations that could be usefull to get a more in d
 I wrote code so the model returns a set of model evaluations, which eventually get added the the configuration the model runs. the last part wasn't written by me, I just focused on the model evaluations. Below is an example of a finished configuration with the different model evaluations in it. 
 
 ```json
-
+"Accuracy": 0.6959537572254335,
+"LogLoss": 1.3907332369374026,
+"MCC": 0.592299585950794,
+"RMSE": 0.5514038835323583,
+"RMSLE": 0.16069798344358124,
+"ConfusionMatrix": [
+[
+    [604,5],
+    [2,254]
+ ],
+[
+    [407,42],
+    [221,195]
+],
+[
+    [456,216],
+    [40,153]
+]
+]
 ```
 
-In the actual research paper we just used the accuracy, precision and recall. This is because the group wanted to use these evaluations because they weren't certain about how to interpret them. 
+In the actual research paper we just used the accuracy, precision and recall. This is because the group wanted to use these evaluations because they weren't certain about how to interpret them.
+
+![ConfusionMatrix](/1/figuur1.png "confusion matrix of the best result" )
+
+I had a hard time evaluation the results because patient group 2 was falsely predicting patient group 3 (PG) as PG2 in large amounts. But vice versa this was not the case. Which is weird because PG3 has smaller amount of patients and therefore data. Which made me think it should have been reversed because the model has less training data and therefor isn't capable of understanding the difference better. Because of the results in PG2 is lowered the precision of PG3, even though it had no trouble of differentiation between the other PG's.   
+
+The result created more questions about the validity of the model and the data, without knowing precisely where to expect. My advice to the next group would be to try a more complex model,to see if these problems still persist with PG2, if that is still the case there should be another look at the data. 
+
+
+
 ---
 # Research
 ## Desk Research
@@ -97,16 +124,26 @@ During the minor I gave multiple presentations, everytime I gave the presentatio
 # Reflection
 ## Own Contribution Evaluation
 ### Situation
+To evaluate the results of all the configurations the model ran, we needed a way to compare different results on a deeper level then average. 
 ### Task
+I took upon myself the task of figuring out what model evaluations we could use and how we could use them.
 ### Actions
+I did a lot of research into different model evaluation past the ones we got during the lessons. Based on what i've learned from this I implemented the evaluations I deemed important.
 ### Results
+The result was in the end the model evaluations I picked weren't used in our paper. 
 ### Reflection
+The results made me doubt myself why I wasn't able to bring over the reasons why I picked these evaluations and wasn't able to bring over the information I learned. The next time this situation arises I will try better in sharing my knowlegde in the subject. Furthermore, there were some model evaluation even I didn't look at (RMSE/RMSLE), this means I should keep it more simple, don't spend time in subjects I'm not sure about. Also try to taylor the evaluations needed for the data/model. Some evaluation have a good purpose in different types of data or other types of model.  
 ## Learned Objectives Evaluation
 ### Situation
+For the most part of the project I was lagging behind in the data preperation/shaping and running the model. 
 ### Task
+I was tasked with understanding the model and the way the data was shaped by last years group. 
 ### Actions
+I did work on data shaping and running models. Although I was lagging behind other group members.
 ### Results
+This resulted in that I had to catch up a lot all the time since people made big progress in preparing the data and training the model, while I was still struggling to do some simpler data shaping and trying train some other models.
 ### Reflection
+When I look back at this, I always see myself getting distracted with ideas, other ways to enrich or shape the data. And getting stuck in a place where I want to do something without having the prior knowlegde needed to go where I am thinking about. I see it is not logical to go from point a to g without taking the steps in between. In the future I should hold my thoughts about crazy ideas and start slowly building my knowlegde to a point where I can actually realize my ideas instead of losing them because I have no clue how to get there. This means I should use smaller steps in the learning proces to make sure I understand what I need to do to go where my ideas lead me. 
 ## Group Evaluation
 ### Situation
 ### Task

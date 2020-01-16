@@ -3,7 +3,6 @@ import re
 from .exercise import Exercise
 from config import config
 
-
 class Patient:
     """
     Data housing for the exercises 
@@ -17,7 +16,7 @@ class Patient:
         """
         self.path = path
         self.exercises = list()
-        self.id = int(os.path.split(path)[1])
+        self.id = int(re.findall(r'\\(\d+)', path)[0])
         self.__generate_exercise_list(load_other)
 
     def __generate_exercise_list(self, load_other: bool):
@@ -42,7 +41,7 @@ class Patient:
             else:  # _ex not in exercisegroups
                 if load_other:
                     self.exercises.append(Exercise(os.path.join(self.path, filename)))
-
+    
     def get_exercises(self) -> list:
         return [exercise for exercise in self.exercises if exercise.exercisegroup in config().exercisegroups]
 

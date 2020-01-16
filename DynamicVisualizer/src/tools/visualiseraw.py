@@ -4,6 +4,7 @@ import matplotlib as mpl
 import re
 from config import config
 
+import matplotlib
 
 from matplotlib import pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -42,13 +43,11 @@ class VisualiseRaw:
             self.raw_fig = plt.subplot2grid((3,4), (0,0), colspan=4, rowspan=2, projection='3d')            
             self.raw_fig.axis('on')
 
-
             self.subplots = [
             plt.subplot2grid((3,4), (2,0)),            
             plt.subplot2grid((3,4), (2,1)),
             plt.subplot2grid((3,4), (2,2)),
             plt.subplot2grid((3,4), (2,3))]
-            
             
             self.subplotdata_r = [
                 self.exercise.dataframe[["thorax_r_x_ext", "thorax_r_y_ax", "thorax_r_z_lat"]].reset_index(drop=True),
@@ -118,16 +117,15 @@ class VisualiseRaw:
 
             self.frame_label = self.raw_fig.text2D(0.005, 2, "Frame: -", transform=self.raw_fig.transAxes)
             #self.frame_label = self.ax.text2D(0.005, 1.95, "2D Text", transform=self.ax.transAxes)
-            import matplotlib
             mpl.style.use('seaborn-talk')
             plt.style.context('dark_background')
             plt.suptitle("group: {g} - patient: {p} - exercise: {e}".format(e=self.exercise.exercisestype, g=self.exercise.patientgroup, p=self.exercise.patientid), fontsize=13, color='black', style='italic')
             
-            #self.ax.text(3, 2, 0,  'unicode: Institut für Festkörperphysik')    
-            # matplotlib.use('Agg')
-            print('start generating gif')
             anim = animation.FuncAnimation(self.fig, self.animation_update_frame, init_func=self.animation_init, frames=self.framecount, interval=VisualiseRaw.interval, blit=True)
-            print('saved!') 
+            # Writer = animation.writers['ffmpeg']
+            # writer = Writer(fps=35, metadata=dict(artist='Me'), bitrate=1800)
+            # anim.save('im.mp4', writer=writer)
+            
             plt.show()
 
     def animation_init(self):
@@ -157,20 +155,11 @@ class VisualiseRaw:
         frame = self.frame_data[frame_index] 
         x, y, z, label= ([] for i in range(4)) 
  
-        
-        #self.frame_label._text = 'Frame: {f}'.format(f=frame_index)
-        #print(self.generate_info_label(frame_index) )
-        #self.frame_label._text = self.generate_info_label(frame_index) 
-        
-        #Creating datapoint for every bone for 2d graphs
-
         for index, enum in enumerate(zip(self.framelines, self.subplotdata_r)):
             #for every plot get x and y appended to list
             line, data = enum
-            line.set_data(frame_index, list(range(-300,300)))
+            line.set_data(frame_index, [-300, 300])
                 
-                 
-
         # Creating x y z array's in correct order
         for key in VisualiseRaw.frame_order: 
             coords = frame[key] 
@@ -179,8 +168,6 @@ class VisualiseRaw:
             z.append(coords[3])
             label.append(key)
 
-
-        
         # Updating locations of points and their labels
         for index, enum in enumerate(zip(self.points, self.texts)):
             point, text = enum  
@@ -198,31 +185,31 @@ class VisualiseRaw:
             line.set_data(xdata, ydata)
             line.set_3d_properties(zdata)
 
-        # Updating trajectory points
-        # Last used point is updated with lastest coordinates 
-        for index, trajectory_list in enumerate(self.trajectory_points): 
-            trajectory_list[self.current_trajectory].set_data(x[index], y[index])
-            trajectory_list[self.current_trajectory].set_3d_properties(z[index])
-            trajectory_list[self.current_trajectory]._color = self.colors[index]
-            trajectory_list[self.current_trajectory]._markersize = 6
+        # # Updating trajectory points
+        # # Last used point is updated with lastest coordinates 
+        # for index, trajectory_list in enumerate(self.trajectory_points): 
+        #     trajectory_list[self.current_trajectory].set_data(x[index], y[index])
+        #     trajectory_list[self.current_trajectory].set_3d_properties(z[index])
+        #     trajectory_list[self.current_trajectory]._color = self.colors[index]
+        #     trajectory_list[self.current_trajectory]._markersize = 6
 
-            # Upon each new frame, decreasing size / color of each trajectory point
-            for index, trajectory in enumerate(trajectory_list):
-                if index != self.current_trajectory:
-                    trajectory._color = trajectory._color * 0.85
-                    trajectory._markersize = trajectory._markersize * 0.9
+        #     # Upon each new frame, decreasing size / color of each trajectory point
+        #     for index, trajectory in enumerate(trajectory_list):
+        #         if index != self.current_trajectory:
+        #             trajectory._color = trajectory._color * 0.85
+        #             trajectory._markersize = trajectory._markersize * 0.9
  
-        # Update current_trajectory to last used trajectory point for next frame
-        if self.current_trajectory == len(self.colors) - 1:
-            self.current_trajectory = 0 
-        else: 
-            self.current_trajectory = self.current_trajectory + 1
+        # # Update current_trajectory to last used trajectory point for next frame
+        # if self.current_trajectory == len(self.colors) - 1:
+        #     self.current_trajectory = 0 
+        # else: 
+        #     self.current_trajectory = self.current_trajectory + 1
         
         # Two labels with elbow angle from converted data 
-        self.elbow_labels[0]._position3d =  [x[6] * 1.04, y[6], z[6]]
-        self.elbow_labels[0]._text = str(int(self.exercise.df['ellebooghoek_r'].iloc[frame_index] % 360))
-        self.elbow_labels[1]._position3d =  [x[3] * 1.04, y[3], z[3]]
-        self.elbow_labels[1]._text = str(int(self.exercise.df['ellebooghoek_l'].iloc[frame_index] % 360))
+        # self.elbow_labels[0]._position3d =  [x[6] * 1.04, y[6], z[6]]
+        # self.elbow_labels[0]._text = str(int(self.exercise.df['ellebooghoek_r'].iloc[frame_index] % 360))
+        # self.elbow_labels[1]._position3d =  [x[3] * 1.04, y[3], z[3]]
+        # self.elbow_labels[1]._text = str(int(self.exercise.df['ellebooghoek_l'].iloc[frame_index] % 360))
 
         self.raw_fig.set_ylabel(frame_index, fontsize = 20)
         # Drawing all changes! 

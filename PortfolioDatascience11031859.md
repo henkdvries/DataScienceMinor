@@ -8,16 +8,16 @@ Table of Contents
 ---
 For the minor Applied Data Science at the Hague University of Applied Sciences I, Lennart van Koppen, will look back at the the work I did for the minor and reflect on that. 
 
----
-# Domain
-I tried to understand the domain as best as possible. this is why I went on a deep dive to find research papers that could explain what the data meant and how it could be interpreted. This resulted in finding several good papers that gave me insight in how machine learning is used in the medical field. Other members of the team gathered scientific papers aswell, which I all read to get a better understanding of shoulder motion and kinemetic recordings of that. 
+## project
+Our project is Ortho Eyes, which is a project with the LUMC, specifically with the laboratory of Kinematics and Neuromechanics(LK&N). We did research on how and with what data science methods we could help make a diagnosis of Musculoskeletal Disorders (MSD), specifically Rotator Cuff tears, easier for physicians. 
 
-## Introduction
+The LUMC has patients with various degrees of Rotater Cuff tears, that have been classified by physicians. The data from these patients are movements in forms of multiple exercises. These exercises were measured with a system called the Flock of Birds, which uses a magnetic field generator and magnetic sensors to measure the movement of bones. 
 
->The use of machine learning in the medical field started in the >1990’s. With the increase of data and processing power in the >21st century, this became a more usable tool. Since 2010 there has been a sharp rise in companies, investing in machine learning and artificial intelligence with the purpose of supporting the medical field (D. Douglas Miller, 2018).  
->
->While most machine learning focuses on Radiology, Oncology, Cardiology and Pathology, the focus of Computer-Assisted-Diagnosis (CAD) lies in image processing and assessing bio markers. The Laboratory for Kinematics and Neuromechanics (LK&N) in the Leiden University Medical Center (LUMC) (Sylvia A. Stegeman, 2016) (C.G.M.Meskers, 1998) is searching for new tools to support doctors in diagnosing Musculoskeletal Disorders (MSD) that are not found within these areas. This research is a follow up on previous researches done by the students of the minor Applied Data Science at the Hague University of Applied Sciences and the LK&N (Kasper van der Hoofd, 2019) as to find new ways to diagnose Rotator Cuff tears using machine learning.  
->
+This resulted in the following research question:
+
+_To what extend and in what way, can different supervised data science techniques be used on kinematic recordings to contribute to a more valid and more reliable diagnosis, made by a doctor, on shoulder disability_
+
+We worked on a classification model to classify patients into different patients groups depending on severity of their Rotator Cuff tears. The patient groups are pre-determined by physicians of the LUMC. 
 
 ---
 # Python for Datascience
@@ -53,7 +53,13 @@ Because I didn't want to spend to much time in filling in the data or clicking t
 ---
 # Research
 ## Desk Research
+As I have stated earlier, I spent alot of time looking for usefull research papers that could support our own research. While it was difficult to find specific papers that relate to our 
 ## Paper
+I wrote or rewrote large parts of the paper, I  
+>The use of machine learning in the medical field started in the 1990’s (D. Douglas Miller, 2018).With the increase of data and processing power in the 21st century, this became a more usable tool. Since 2010 there has been a sharp rise in companies, investing in machine learning and artificial intelligence with the purpose of supporting the medical field.  
+>
+>While most machine learning focuses on Radiology, Oncology, Cardiology and Pathology, the focus of Computer-Assisted-Diagnosis (CAD) lies in image processing and assessing bio markers. The Laboratory for Kinematics and Neuromechanics (LK&N) in the Leiden University Medical Center (LUMC) (Sylvia A. Stegeman, 2016) (C.G.M.Meskers, 1998) is searching for new tools to support doctors in diagnosing Musculoskeletal Disorders (MSD) that are not found within these areas. This research is a follow up on previous researches done by the students of the minor Applied Data Science at the Hague University of Applied Sciences and the LK&N (Kasper van der Hoofd, 2019) as to find new ways to diagnose Rotator Cuff tears using machine learning.  
+>
 ---
 # Presentations
 ---

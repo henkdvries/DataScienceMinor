@@ -104,10 +104,10 @@ To get a good feel for the domain of our research I spent alot of time reading r
  - This paper describes the use of AI in medical practice. It shows that since the 90's slowly more AI has been used within the field of medicine. Thus confirming 
 
 2. Phadke, V., Braman, J. P., LaPrade, R. F., & Ludewig, P. M. (2011). Comparison of glenohumeral motion using different rotation sequences. Journal of Biomechanics, 44(4), 700–705. https://doi.org/10.1016/j.jbiomech.2010.10.042
- - This paper describes a problem we could run into with our data regarding the humerus and the issue with working with Euler angles to represent movement, it is called Gimbal Lock. This is where in Euler space one axis rotates 90 degrees, which it then lines up with another axis, therefor removing one degree of freedom. This was also neccesary to understand how the axis notations worked for 3D visualization, This was also written in the paper that was used by the LUMC to translate the data into medical terms. 
+ - This paper describes a problem we could run into with our data regarding the humerus and the issue with working with Euler angles to represent movement, it is called Gimbal Lock. This is where in Euler space, one axis rotates 90 degrees, which it then lines up with another axis, therefor removing one degree of freedom. This was also neccesary to understand how the axis notations worked for 3D visualization, This was also written in the paper that was used by the LUMC to translate the data into medical terms. 
 
 ## Paper
-I wrote or rewrote large parts of the paper, for example the introduction below. I worked the last couple of day almost 12 hours per day on the research paper. 
+I wrote or rewrote large parts of the paper, for example the introduction below. I worked the last couple of day almost 12 hours per days on the research paper. 
 
 >The use of machine learning in the medical field started in the 1990’s (D. Douglas Miller, 2018).With the increase of data and processing power in the 21st century, this became a more usable tool. Since 2010 there has been a sharp rise in companies, investing in machine learning and artificial intelligence with the purpose of supporting the medical field.  
 >
@@ -146,7 +146,12 @@ This resulted in that I had to catch up a lot all the time since people made big
 When I look back at this, I always see myself getting distracted with ideas, other ways to enrich or shape the data. And getting stuck in a place where I want to do something without having the prior knowlegde needed to go where I am thinking about. I see it is not logical to go from point a to g without taking the steps in between. In the future I should hold my thoughts about crazy ideas and start slowly building my knowlegde to a point where I can actually realize my ideas instead of losing them because I have no clue how to get there. This means I should use smaller steps in the learning proces to make sure I understand what I need to do to go where my ideas lead me. 
 ## Group Evaluation
 ### Situation
+As a group we are working togather to tackle big epics to finish our project.
 ### Task
+The task neccesary for this was to split up all encompassing epics to a bitsize bits where can work on and finish in a short notice.
 ### Actions
+To get these bitsize steps we discussed plenty on how we should fill the scrumboard. Also we should reflect on the earlier created tasks and issues to see if they are still valid.
 ### Results
+This resulted in a agile working environment. Where we took what wee needed to do on sprint by sprint basis, within a general plan to reach a goal.
 ### Reflection
+Although it went fine for the most part, I should for one not be a scrum master. I already have issues with being structured and not being able to provide a certain amount of structure to the group influences the rest aswell. Luckily other people picked up on this, creating a step by step plan on how to reach our goals and maintaining this on the scrumboard. In the end it all worked out fine but I think some annoyance could have been avoided if I was able to say that I'm not the person for the job.

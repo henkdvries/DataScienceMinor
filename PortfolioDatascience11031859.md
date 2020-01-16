@@ -1,5 +1,6 @@
 # DataScienceMinor
-Portfolio for the Data Science Minor
+### Portfolio for the Data Science Minor
+
 Table of Contents
 ==================
 
@@ -15,8 +16,9 @@ As Software Engineering student I had experience with python for a couple of yea
 ## Datacamp
 Here is an overview of my Datacamp assesments
 ![DatacampAssesments](/images/Datacamp.png)
-# Pre-Processing Data
 ---
+# Pre-Processing Data
+
 
 ## Data Exploration
 ## Finding wrongly name CSV files

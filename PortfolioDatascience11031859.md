@@ -18,6 +18,8 @@ This resulted in the following research question:
 _To what extend and in what way, can different data science techniques be used on kinematic recordings to contribute to a more valid and more reliable diagnosis, made by a doctor, on shoulder disability_
 
 We worked on a classification model to classify patients into different patients groups depending on severity of their Rotator Cuff tears. The patient groups are pre-determined by physicians of the LUMC. 
+### Structure
+For the structure of the project we used scrum to divide bigger issues into smaller tasks. I setup the Azure DevOps enviroment where we both have are scrumboard but also our repository. We did weekly and bi-weekly sprints depending on the stage of the project to guide the team from the starting epics towards smaller task that could be completed within a sprint. 
 
 ---
 # Python for Datascience
@@ -48,6 +50,7 @@ Because I didn't want to spend to much time in filling in the data or clicking t
 
 ---
 # Predictive Analytics
+For the predictive analytics I mostly worked on the model evaluation. 
 
 ## Model Evaluation
 ---

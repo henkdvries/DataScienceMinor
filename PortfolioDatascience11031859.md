@@ -15,7 +15,7 @@ The LUMC has patients with various degrees of Rotater Cuff tears, that have been
 
 This resulted in the following research question:
 
-_To what extend and in what way, can different supervised data science techniques be used on kinematic recordings to contribute to a more valid and more reliable diagnosis, made by a doctor, on shoulder disability_
+_To what extend and in what way, can different data science techniques be used on kinematic recordings to contribute to a more valid and more reliable diagnosis, made by a doctor, on shoulder disability_
 
 We worked on a classification model to classify patients into different patients groups depending on severity of their Rotator Cuff tears. The patient groups are pre-determined by physicians of the LUMC. 
 
@@ -27,7 +27,7 @@ Here is an overview of my Datacamp assesments
 ![DatacampAssesments](/images/Datacamp.png)
 ---
 # Pre-Processing Data
-For pre-processing data I was messing around with the data and using some newly learned libraries from the datacamp courses and practicising my newly learned skills from datacamp. Furthermore I spent the most time in finding a way to fingerprint exercise for the purpose of finding wrongly named exercise files. Because the fingerprinting took to long I eventually resorted to manually spitting through the data with a self created tool to check all patients/exercises for wrongly named files. 
+For pre-processing data I was messing around with the data and using some newly learned libraries from the datacamp courses and practicising my newly learned skills from datacamp. Furthermore I spent the most time in finding a way to fingerprint exercise for the purpose of finding wrongly named exercise files. Because the fingerprinting took too long I eventually resorted to manually spitting through the data with a self created tool to check all patients/exercises for wrongly named files. 
 ## Data Exploration
 For data exploration I mostly used the newly learned libraries like Pandas and Seaborn to plot exercises and understand the way the data is shaped. 
 ## Finding wrongly name CSV files
@@ -53,9 +53,12 @@ Because I didn't want to spend to much time in filling in the data or clicking t
 ---
 # Research
 ## Desk Research
-As I have stated earlier, I spent alot of time looking for usefull research papers that could support our own research. While it was difficult to find specific papers that relate to our 
+To get a good feel for the domain of our research I spent alot of time reading research papers about machine learning within the medical field, how motion of shoulders work and these shoulder motions can be translated to data that can be used for machine learning. I summed up a list of interesting research papers I found during my desk research.
+
+TABLE HERE
 ## Paper
-I wrote or rewrote large parts of the paper, I  
+I wrote or rewrote large parts of the paper, for example the introduction below. I worked the last couple of day almost 12 hours per day on the research paper. 
+
 >The use of machine learning in the medical field started in the 1990’s (D. Douglas Miller, 2018).With the increase of data and processing power in the 21st century, this became a more usable tool. Since 2010 there has been a sharp rise in companies, investing in machine learning and artificial intelligence with the purpose of supporting the medical field.  
 >
 >While most machine learning focuses on Radiology, Oncology, Cardiology and Pathology, the focus of Computer-Assisted-Diagnosis (CAD) lies in image processing and assessing bio markers. The Laboratory for Kinematics and Neuromechanics (LK&N) in the Leiden University Medical Center (LUMC) (Sylvia A. Stegeman, 2016) (C.G.M.Meskers, 1998) is searching for new tools to support doctors in diagnosing Musculoskeletal Disorders (MSD) that are not found within these areas. This research is a follow up on previous researches done by the students of the minor Applied Data Science at the Hague University of Applied Sciences and the LK&N (Kasper van der Hoofd, 2019) as to find new ways to diagnose Rotator Cuff tears using machine learning.  
@@ -64,3 +67,6 @@ I wrote or rewrote large parts of the paper, I
 # Presentations
 ---
 # Reflection
+## Own Contribution Evaluation
+## Learned Objectives Evaluation
+## Group Evaluation

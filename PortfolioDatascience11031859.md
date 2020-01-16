@@ -14,7 +14,7 @@ For the minor Applied Data Science at the Hague University of Applied Sciences I
 As Software Engineering student I had experience with python for a couple of years. Although I thought I knew the most from the early parts of the Datacamp Courses, I was suprised to see there is plenty of more to learn. I had experience with the certain libraries like numpy but didn't know the inner workings until I started learning it with Data Camp. Furthermore, I didn't have much experience with most Data Science libraries, but they were explained pretty well with the Datacamp courses. 
 ## Datacamp
 Here is an overview of my Datacamp assesments
-![DatacampAssesments](images\Datacamp.png)
+![DatacampAssesments](\images\Datacamp.png)
 # Pre-Processing Data
 ---
 

@@ -32,6 +32,7 @@ As seen in the result below, I wasn't able to refine the chunk finder to a point
 At this point I wanted to manually go through all the files which means I needed a way to visualize the exercises in a way so I could compare the same labeled exercises from multiple patients.
 #### Manually Finding Wrongly Named Files
 Because I didn't want to spend to much time in filling in the data or clicking through the different plots of the exercises I went on to create a dynamic visualizer to plot all the exercises and patient dynamically, which I could loop through with simple key board shortcuts. I also added a way to register all the wrongly named files to a single json file. 
+
 ---
 # Predictive Analytics
 

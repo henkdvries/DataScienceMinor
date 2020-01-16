@@ -1,0 +1,22 @@
+{
+    "patients": {
+        "23": {
+            "exercise": [
+                "RF"
+            ],
+            "patientgroup": 1
+        },
+        "26": {
+            "exercise": [
+                "EL"
+            ],
+            "patientgroup": 2
+        },
+        "28": {
+            "exercise": [
+                "EH"
+            ],
+            "patientgroup": 2
+        }
+    }
+}

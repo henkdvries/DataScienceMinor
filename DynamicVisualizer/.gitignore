@@ -1,0 +1,12 @@
+.vscode/
+.DS_Store 
+.mat 
+.idea 
+test.py
+
+venv/
+m/ 
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+eval_result.json
